@@ -1,9 +1,9 @@
-local MoonCake = require('mooncake')
-local WebSocket = require('websocket')
+local MoonCake = require('mooncake') -- EXPRESS for LUA
+local WebSocket = require('modules.socket')
 
-local server = MoonCake:new()
-server:static("public")
-server:start(8080)
+local MoonCakeServer = MoonCake:new()
+MoonCakeServer:static("public")
+MoonCakeServer:start(8080)
 
 local WS = WebSocket.server.new():listen(8081)
 
