@@ -364,7 +364,7 @@ function MoonCake:static (fileDir, options)
     options = options or {}
     options.root = options.root or "/"
     options.index = options.index or false
-    print("Serving Directory:" .. fileDir)
+    --print("Serving Directory:" .. fileDir)
     local headers = {}
     local maxAge = options.maxAge or options.age or 15552000 -- half a year
     headers["Cache-Control"] = "public, max-age=" .. tostring(maxAge)

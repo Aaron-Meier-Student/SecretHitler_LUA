@@ -58,3 +58,7 @@
 #loading h4 {
     color: white;
 }
+
+#loading * {
+    user-select: none;
+}

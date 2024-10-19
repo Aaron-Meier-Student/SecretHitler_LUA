@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <section id="start" class="hidden">
+    <section id="start">
         <img src="./images/logo.png" alt="Icon of Secret Hitler">
         <div class="showFrame">
             <nav>
@@ -22,17 +22,18 @@
                 <div id="slidebar"></div>
             </nav>
             <div id="joinFrame" class="showFrame">
-                <input type="text" placeholder="USERNAME" autocomplete="off">
-                <input type="text" placeholder="ROOM CODE" autocomplete="off" maxlength="5">
+                <input type="text" placeholder="USERNAME" autocomplete="off" maxlength="20">
+                <input type="text" placeholder="ROOM CODE" autocomplete="off" maxlength="6">
                 <button onclick="join()">JOIN ROOM</button>
             </div>
             <div id="hostFrame">
-                <input type="text" placeholder="USERNAME" autocomplete="off">
+                <input type="text" placeholder="USERNAME" autocomplete="off" maxlength="20">
                 <button onclick="host()">HOST ROOM</button>
             </div>
         </div>
+        <h3 id="error" style="color:red;"></h3>
     </section>
-    <section id="lobby">
+    <section id="lobby" class="hidden">
         <img src="./images/logo.png" alt="Icon of Secret Hitler">
         <div>
             <div class="chip" id="code">
@@ -48,7 +49,7 @@
                 <h4>Players (0/9)</h4>
             </div>
             <hr>
-            <button>START</button>
+            <button id="start" disabled>START</button>
         </div>
     </section>
     <section id="game" class="hidden">
@@ -65,5 +66,7 @@
         <h4>Loading...</h4>
     </section>
 </body>
+
+<script src="./scripts/client.js" defer></script>
 
 </html>

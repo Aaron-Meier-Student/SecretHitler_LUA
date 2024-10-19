@@ -17,6 +17,10 @@ body > section {
     position: absolute;
 }
 
+body > section {
+    overflow-y: auto;
+}
+
 .hidden {
     opacity: 0;
     display: none;
@@ -32,4 +36,9 @@ body > section {
 div.showFrame {
     opacity: 1 !important;
     z-index: 2;
+}
+
+button:disabled {
+    cursor: default !important;
+    background-color: rgb(68, 68, 68) !important;
 }
