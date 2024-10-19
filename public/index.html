@@ -2,43 +2,68 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secret Hitler Online</title>
-  <link rel="stylesheet" href="./styles/main.css">
-  <link rel="stylesheet" href="./styles/loading.css">
-  <script src="/socket.io/socket.io.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Hitler Online</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/start.css">
+    <link rel="stylesheet" href="./styles/lobby.css">
+    <link rel="stylesheet" href="./styles/game.css">
+    <link rel="stylesheet" href="./styles/loading.css">
 </head>
 
 <body>
-  <h2 id="roomCode"></h2>
-  <div id="startMenu" class="showFrame">
-    <h2>Secret Hitler Online</h2>
-    <nav>
-      <button id="join" class="selected">JOIN</button>
-      <button id="host">HOST</button>
-      <div id="slidebar"></div>
-    </nav>
-    <div id="joinFrame" class="showFrame">
-      <input type="text" placeholder="USERNAME" autocomplete="off">
-      <input type="text" placeholder="ROOM CODE" autocomplete="off" maxlength="5">
-      <button onclick="join()">JOIN ROOM</button>
-    </div>
-    <div id="hostFrame">
-      <input type="text" placeholder="USERNAME" autocomplete="off">
-      <button onclick="host()">HOST ROOM</button>
-    </div>
-  </div>
-  <div id="loadingScreen" class="hidden">
-    <div class="loader-container">
-      <div class="loader">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <h4>Loading...</h4>
-  <script src="./scripts/client.js" defer></script>
+    <section id="start" class="hidden">
+        <img src="./images/logo.png" alt="Icon of Secret Hitler">
+        <div class="showFrame">
+            <nav>
+                <button id="join" class="selected">JOIN</button>
+                <button id="host">HOST</button>
+                <div id="slidebar"></div>
+            </nav>
+            <div id="joinFrame" class="showFrame">
+                <input type="text" placeholder="USERNAME" autocomplete="off">
+                <input type="text" placeholder="ROOM CODE" autocomplete="off" maxlength="5">
+                <button onclick="join()">JOIN ROOM</button>
+            </div>
+            <div id="hostFrame">
+                <input type="text" placeholder="USERNAME" autocomplete="off">
+                <button onclick="host()">HOST ROOM</button>
+            </div>
+        </div>
+    </section>
+    <section id="lobby">
+        <img src="./images/logo.png" alt="Icon of Secret Hitler">
+        <div>
+            <div class="chip" id="code">
+                <h4>Lobby Code</h4>
+                <h3>123456</h3>
+            </div>
+            <div class="chip" id="host">
+                <h4>Host</h4>
+                <h3>HostUsernameHere</h3>
+            </div>
+            <hr>
+            <div class="chip" id="players">
+                <h4>Players (0/9)</h4>
+            </div>
+            <hr>
+            <button>START</button>
+        </div>
+    </section>
+    <section id="game" class="hidden">
+
+    </section>
+    <section id="loading" class="hidden">
+        <div class="loader-container">
+            <div class="loader">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <h4>Loading...</h4>
+    </section>
 </body>
 
 </html>

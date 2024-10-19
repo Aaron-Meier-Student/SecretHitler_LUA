@@ -42,7 +42,7 @@
     }
 }
 
-#loading {
+#loadingScreen {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,6 +55,6 @@
     transition: 250ms ease-in-out;
 }
 
-#loading h4 {
+#loadingScreen h4 {
     color: white;
 }

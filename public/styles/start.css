@@ -1,0 +1,123 @@
+#start {
+    flex-direction: column;
+}
+
+#start > img {
+    width: 200px;
+    margin-bottom: 50px;
+}
+
+#start > div {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 400px;
+    position: relative;
+    border-radius: 8px;
+    background-color: rgb(17, 17, 19);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 250ms;
+}
+
+#start > div nav {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#start > div nav button {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 250ms;
+}
+
+#start > div nav button.selected {
+    color: white;
+}
+
+#start #slidebar {
+    width: 100%;
+    margin: 0;
+    height: 1px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.05) 25%, white 25%, white 75%, rgba(255, 255, 255, 0.05) 75%);
+    background-position: right;
+    background-size: 200%;
+    position: absolute;
+    top: 50px;
+    transition: 250ms ease-in-out;
+}
+
+#start #slidebar.selected {
+    background-position: left;
+}
+
+#start > div.showFrame {
+    height: 290px !important;
+}
+
+#start input,
+#start button {
+    width: 90%;
+    height: 40px;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    background-color: #17181a;
+}
+
+#start > div > div button {
+    background-color: #2837ff;
+    transition: 250ms;
+    cursor: pointer;
+}
+
+#start > div > div button:hover {
+    background-color: #4d59ff;
+}
+
+#start > h2 {
+    user-select: none;
+    position: fixed;
+    text-align: center;
+    width: 400px;
+    top: 100px;
+}
+
+h2 {
+    color: white;
+}
+
+div#joinFrame,
+div#hostFrame {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 140px;
+    transition: 500ms;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    overflow: hidden;
+    transition: 200ms ease;
+}
+
+div#joinFrame {
+    height: 250px;
+}
