@@ -5,6 +5,7 @@ let responseBinds = {}
 
 let clientRoomId;
 let clientUsername;
+let isHosting = false;
 
 // Loading Functionality
 
@@ -44,6 +45,7 @@ startArea.querySelector('#joinFrame button').onclick = function () {
     const username = document.querySelector('#joinFrame input:nth-child(1)').value;
     const roomcode = document.querySelector('#joinFrame input:nth-child(2)').value;
     if (!username || !roomcode || roomcode.length < 6) return;
+    isHosting = false;
     clientUsername = username;
     clientRoomId = roomcode;
     ConnectedSocket.send(JSON.stringify({
@@ -58,6 +60,7 @@ startArea.querySelector('#joinFrame button').onclick = function () {
 startArea.querySelector('#hostFrame button').onclick = function () {
     const username = document.querySelector('#hostFrame input').value;
     if (!username) return;
+    isHosting = true;
     clientUsername = username;
     ConnectedSocket.send(JSON.stringify({
         headers: ['Host'],
@@ -94,12 +97,13 @@ function updateLobby(lobbyData) {
         lobbyArea.querySelector('#players').appendChild(newH2);
     });
     lobbyArea.querySelector('#players h4').innerHTML = `Players (${lobbyData.Players.length}/9)`
+    if (!isHosting) return;
+    lobbyArea.querySelector('#start').disabled = lobbyData.Players.length > 4 ? false : true;
 }
 
 responseBinds.updateLobby = updateLobby;
 
 responseBinds.startGame = function(message) {
-
 
 };
 
